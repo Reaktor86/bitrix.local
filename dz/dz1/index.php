@@ -32,18 +32,5 @@ https://dev.1c-bitrix.ru/api_help/main/reference/cfile/makefilearray.php
 
 <?php
 
-if (CModule::IncludeModule('iblock')) {
-
-    /*$obj = new CIBlockElement;
-    $fields = [
-        'IBLOCK_ID' => 7,
-        'NAME' => 'форма',
-        'CODE' => 'form',
-    ];
-    $newElem = $obj->Add($fields);
-    var_dump($newElem);*/
-
-}
-
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
 

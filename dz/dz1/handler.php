@@ -15,17 +15,21 @@ if (CModule::IncludeModule('iblock')) {
      */
 
     $obj = new CIBlockElement;
+    $props = [
+        'NAME' => $_REQUEST['name'],
+        'SURNAME' => $_REQUEST['surname'],
+        'FILE' => $_REQUEST['file'],
+    ];
     $fields = [
-        'IBLOCK_ID' => 7,
+        'IBLOCK_ID' => 4,
         'NAME' => 'Результат формы ' . date('Y-m-d H:i:s'),
         'CODE' => 'form',
-        'PROPERTY_NAME' => $_REQUEST['name'],
-        'PROPERTY_SURNAME' => $_REQUEST['surname'],
-        'PROPERTY_FILE' => $_REQUEST['file'],
+        'PROPERTY_VALUES' => $props,
     ];
     $newElem = $obj->Add($fields);
-    var_dump($newElem);
+    var_dump($obj->LAST_ERROR);
 
-
+    $arFiles = CFile::MakeFileArray($_SERVER["DOCUMENT_ROOT"]."/images/");
+    
 
 }
